@@ -1,0 +1,49 @@
+.container {
+  background-image: url("/crew/background-crew-desktop.jpg");
+  object-fit: fill;
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.imgContainer {
+  background-color: white;
+  height: 300px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.image {
+  height: auto;
+  width: 200px;
+}
+.flexView {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+}
+.desc {
+  font-size: 12px;
+  color: gray;
+}
+@media (max-width: 600px) {
+  .image {
+    width: 100px;
+  }
+  .imgContainer {
+    height: 190px;
+  }
+}
