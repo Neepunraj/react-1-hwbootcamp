@@ -2,11 +2,34 @@
 
 import { usePathname } from "next/navigation";
 import styles from "./Footer.module.css";
+import Link from "next/link";
+
+import SocialMediaItem from "../SocialMediaItem";
 const socialMedia = [
-  { id: 0, name: "Facebook", siteAddress: "https://facebook.com" },
-  { id: 1, name: "Instagram", siteAddress: "https://instagram.com" },
-  { id: 2, name: "Tiktok", siteAddress: "https://tiktok.com" },
-  { id: 3, name: "Linkdin", siteAddress: "https://linkdin.com" },
+  {
+    id: 0,
+    name: "Facebook",
+    siteAddress: "https://facebook.com",
+    imgUrl: "/socialMedia/facebook.png",
+  },
+  {
+    id: 1,
+    name: "Instagram",
+    siteAddress: "https://instagram.com",
+    imgUrl: "/socialMedia/instagram.png",
+  },
+  {
+    id: 2,
+    name: "Tiktok",
+    siteAddress: "https://tiktok.com",
+    imgUrl: "/socialMedia/tiktok.webp",
+  },
+  {
+    id: 3,
+    name: "Linkdin",
+    siteAddress: "https://linkdin.com",
+    imgUrl: "/socialMedia/linkdin.webp",
+  },
 ];
 export const Footer = () => {
   const path = usePathname().split("?")[0];
@@ -30,7 +53,22 @@ export const Footer = () => {
           <li> <Link/> </li>
           ...
         </ul>
+        
       </div> */}
+      <div className={styles.pages}>
+        <h3>Pages</h3>
+        <ul>
+          <li>
+            <Link href={"/about_us"}>About Us</Link>
+          </li>
+          <li>
+            <Link href={"/destination"}>Destination</Link>
+          </li>
+          <li>
+            <Link href={"/nasa_collaboration"}>Nasa Collaboration</Link>
+          </li>
+        </ul>
+      </div>
       {/* Docs for the Link: https://nextjs.org/docs/pages/api-reference/components/link */}
 
       {/* TASK - React 1 week 1 */}
@@ -41,9 +79,12 @@ export const Footer = () => {
         {/* added linkedn and used map method */}
         <ul className={styles.footerList}>
           {socialMedia.map((item) => (
-            <li key={item.id}>
-              <a href={item.siteAddress}>{item.name}</a>
-            </li>
+            <SocialMediaItem
+              url={item.siteAddress}
+              key={item.id}
+              title={item.name}
+              icon={item.imgUrl}
+            />
           ))}
           {/* TASK - React 1 week 2 */}
           {/* Create a <SocialMediaItem /> component and replace all of the list items! */}
