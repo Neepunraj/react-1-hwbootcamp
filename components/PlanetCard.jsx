@@ -14,17 +14,12 @@ export default function PlanetCard({
       <img className={styles.planetThumbnail} src={thumbnail} alt={name} />
       <div className={styles.planetDescription}>
         <h2>
-          {name}{" "}
-          {isPlanetSelected && selectedPlanets.includes(name)
-            ? "- SELECTED"
-            : ""}
+          {name} {selectedPlanets.includes(name) ? "- SELECTED" : ""}
         </h2>
         <p>{description}</p>
       </div>
       <button className="roundButton" onClick={onAddOrRemovePlanet}>
-        {isPlanetSelected && selectedPlanets.includes(name)
-          ? "REMOVE"
-          : "ADD PLANET"}
+        {selectedPlanets.includes(name) ? "REMOVE" : "ADD PLANET"}
       </button>
     </div>
   );
