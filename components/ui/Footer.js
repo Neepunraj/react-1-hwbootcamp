@@ -31,6 +31,27 @@ const socialMedia = [
     imgUrl: "/socialMedia/linkdin.webp",
   },
 ];
+const pages = [
+  {
+    name: "About Us",
+    path: "/about_us",
+  },
+  {
+    name: "Destination",
+    path: "/destination",
+  },
+  {
+    name: "Nasa Collaboration",
+    path: "/nasa_collaboration",
+  },
+];
+const PageItem = ({ path, name }) => {
+  return (
+    <li>
+      <Link href={path}> {name}</Link>
+    </li>
+  );
+};
 export const Footer = () => {
   const path = usePathname().split("?")[0];
 
@@ -55,18 +76,13 @@ export const Footer = () => {
         </ul>
         
       </div> */}
+      {/* i use pageitem here */}
       <div className={styles.pages}>
         <h3>Pages</h3>
         <ul>
-          <li>
-            <Link href={"/about_us"}>About Us</Link>
-          </li>
-          <li>
-            <Link href={"/destination"}>Destination</Link>
-          </li>
-          <li>
-            <Link href={"/nasa_collaboration"}>Nasa Collaboration</Link>
-          </li>
+          {pages.map((page) => (
+            <PageItem name={page.name} path={page.path} key={page.name} />
+          ))}
         </ul>
       </div>
       {/* Docs for the Link: https://nextjs.org/docs/pages/api-reference/components/link */}
