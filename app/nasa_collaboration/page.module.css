@@ -4,9 +4,31 @@
   height: 100vh;
 }
 
-
 .nasaPicOfTheDayImg {
   width: auto;
   height: 400px;
-
+}
+.loading {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.error {
+  color: red;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.imgNasa {
+  height: 100%;
+  width: 100%;
+}
+.roverPhotoCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }

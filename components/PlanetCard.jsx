@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "@/components/destination/destination.module.css";
 
 export default function PlanetCard({
-  name,
-  description,
-  thumbnail,
-  isPlanetSelected,
-  onAddOrRemovePlanet,
-  selectedPlanets,
+  planetItem,
+  onAddOrRemoveDestination,
+  destinationTogo,
 }) {
+  const { name, description, thumbnail } = planetItem;
+  const isSelected = destinationTogo.some((item) => item.id === planetItem.id);
   return (
     <div className={styles.planetCard}>
       <img className={styles.planetThumbnail} src={thumbnail} alt={name} />
       <div className={styles.planetDescription}>
         <h2>
-          {name} {selectedPlanets.includes(name) ? "- SELECTED" : ""}
+          {name}
+          {isSelected ? "SELECTED" : ""}
         </h2>
         <p>{description}</p>
       </div>
-      <button className="roundButton" onClick={onAddOrRemovePlanet}>
-        {selectedPlanets.includes(name) ? "REMOVE" : "ADD PLANET"}
+      <button className="roundButton" onClick={onAddOrRemoveDestination}>
+        {isSelected ? "REMOVE" : "ADD A PLANET"}
       </button>
     </div>
   );

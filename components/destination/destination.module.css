@@ -77,8 +77,16 @@
   font-size: small;
 }
 
-.addWishlistItem input, 
+.addWishlistItem input,
 .addWishlistItem select {
   height: 30px;
   margin-block-end: var(--spacing-20);
+}
+.thumbnail {
+  height: 40px;
+  width: 40px;
+}
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap;
 }
